@@ -52,3 +52,9 @@ body,
 *::after {
   box-sizing: border-box;
 }
+
+/* Prevent Android WebView horizontal rubber-band / edge-swipe bounce */
+html, body, #root {
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
+}
