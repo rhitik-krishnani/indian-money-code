@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Money Code</title>
+    <meta name="theme-color" content="#4f46e5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="/assets/manifest-CfxtbW3e.json">
+    <link rel="apple-touch-icon" href="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=192&h=192&auto=format&fit=crop">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        background: 'hsl(222, 47%, 11%)',
+                        primary: 'hsl(243, 80%, 58%)',
+                        accent: 'hsl(244, 86%, 66%)',
+                        surface: 'hsl(217, 33%, 17%)',
+                        border: 'hsl(217, 33%, 25%)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: theme('colors.background');
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.border');
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.primary');
+        }
+    </style>
+    <link rel="stylesheet" href="/index.css">
+  <script type="module" crossorigin src="/assets/index-CI-D1QgV.js"></script>
+</head>
+<body class="bg-background text-white font-sans antialiased">
+    <div id="root"></div>
+</body>
+</html>
