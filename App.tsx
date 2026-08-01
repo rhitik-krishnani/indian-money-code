@@ -296,7 +296,7 @@ const App: React.FC = () => {
                     userLevel={userLevelData.level}
                 />
                 
-                <main className="flex-1 w-0 min-w-0 p-4 lg:p-8 overflow-y-auto overflow-x-hidden min-h-0 bg-background/50">
+                <main className="flex-1 p-4 lg:p-8 overflow-y-auto w-full overflow-x-hidden min-h-0 bg-background/50">
                     <div className="max-w-6xl mx-auto w-full pb-20 lg:pb-0">
                         <AnimatePresence mode="wait">
                             <motion.div
