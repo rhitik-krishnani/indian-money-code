@@ -193,7 +193,7 @@ const DashboardPage: React.FC<DashboardPageProps> = ({ setView, lang, userLevel 
     return (
         <div className="space-y-6 pb-20">
             {loading && (
-                <div className="fixed top-20 right-8 z-[60] bg-surface/80 backdrop-blur-md border border-white/10 rounded-full px-4 py-2 flex items-center gap-2 shadow-2xl">
+                <div className="fixed top-20 right-3 sm:right-8 z-[60] bg-surface/80 backdrop-blur-md border border-white/10 rounded-full px-4 py-2 flex items-center gap-2 shadow-2xl">
                     <Loader2 size={14} className="animate-spin text-primary" />
                     <span className="text-[10px] font-black uppercase tracking-widest text-gray-400">Syncing Intelligence...</span>
                 </div>
@@ -220,7 +220,7 @@ const DashboardPage: React.FC<DashboardPageProps> = ({ setView, lang, userLevel 
             <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="relative overflow-hidden rounded-3xl bg-indigo-600 p-8 text-white shadow-2xl shadow-indigo-500/20 md:p-12"
+                className="relative w-full max-w-full overflow-hidden rounded-3xl bg-indigo-600 p-6 md:p-8 lg:p-12 text-white shadow-2xl shadow-indigo-500/20"
             >
                 <div className="absolute -top-24 -right-24 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
                 <div className="relative z-10 max-w-2xl space-y-6">
