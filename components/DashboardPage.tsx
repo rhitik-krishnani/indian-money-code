@@ -235,7 +235,7 @@ const DashboardPage: React.FC<DashboardPageProps> = ({ setView, lang, userLevel 
                          Unified financial intelligence for the modern Indian investor. From real-time portfolio synergy to legacy fortification—achieve total financial sovereignty.
                     </p>
                     <div className="flex flex-wrap gap-4 pt-4">
-                        <Button className="h-12 bg-white px-8 font-black text-indigo-600 hover:bg-indigo-50" onClick={() => setView('portfolio')}>Sync Portfolio</Button>
+                        <Button className="h-12 bg-white px-8 font-black !text-indigo-600 hover:bg-indigo-50" onClick={() => setView('portfolio')}>Sync Portfolio</Button>
                         <Button variant="outline" className="h-12 border-white/20 bg-white/5 px-8 font-black text-white hover:bg-white/10" onClick={() => setView('mf-center')}>Explore Funds</Button>
                     </div>
                 </div>
