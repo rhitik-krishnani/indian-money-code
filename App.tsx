@@ -286,7 +286,7 @@ const App: React.FC = () => {
                 lang={lang}
                 toggleLang={toggleLang}
             />
-            <div className="flex flex-1 relative max-w-[1600px] mx-auto w-full overflow-hidden">
+            <div className="flex flex-1 relative w-full min-w-0 overflow-hidden">
                 <Sidebar 
                     isOpen={sidebarOpen} 
                     setView={handleNavigate} 
@@ -296,7 +296,7 @@ const App: React.FC = () => {
                     userLevel={userLevelData.level}
                 />
                 
-                <main className="flex-1 p-4 lg:p-8 overflow-y-auto w-full overflow-x-hidden min-h-0 bg-background/50">
+                <main className="flex-1 min-w-0 p-4 lg:p-8 overflow-y-auto overflow-x-hidden min-h-0 bg-background/50">
                     <div className="max-w-6xl mx-auto w-full pb-20 lg:pb-0">
                         <AnimatePresence mode="wait">
                             <motion.div
