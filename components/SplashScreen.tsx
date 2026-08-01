@@ -29,7 +29,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ lang, onComplete }) 
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1, ease: "easeInOut" }}
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black overflow-hidden"
+          className="fixed inset-0 z-[100] flex h-dvh max-h-dvh w-full max-w-full flex-col items-center justify-center overflow-hidden bg-black"
         >
           {/* Animated Background Gradients */}
           <div className="absolute inset-0 opacity-20 pointer-events-none">
@@ -76,7 +76,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ lang, onComplete }) 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-3xl md:text-5xl font-display font-black text-white tracking-tight mb-6 text-center px-4 whitespace-nowrap"
+              className="mb-6 max-w-full px-4 text-center text-3xl font-display font-black tracking-tight text-white md:text-5xl"
             >
               {t.assetForge}
             </motion.h1>
@@ -105,9 +105,9 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ lang, onComplete }) 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5 }}
-            className="absolute bottom-16 flex items-center gap-2"
+            className="absolute bottom-16 flex max-w-[min(100%,20rem)] flex-col items-center gap-2 px-4 text-center sm:flex-row"
           >
-            <div className="flex gap-1.5">
+            <div className="flex shrink-0 gap-1.5">
               {[0, 1, 2].map((i) => (
                 <motion.div
                   key={i}
@@ -124,7 +124,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ lang, onComplete }) 
                 />
               ))}
             </div>
-            <span className="text-[10px] font-black text-gray-500 uppercase tracking-widest">
+            <span className="text-[10px] font-black text-gray-500 uppercase tracking-widest leading-snug">
               Initializing Secure Environment
             </span>
           </motion.div>

@@ -262,7 +262,7 @@ const App: React.FC = () => {
 
     if (!splashComplete) return <SplashScreen lang={lang} onComplete={() => setSplashComplete(true)} />;
 
-    if (authLoading) return <div className="h-screen flex items-center justify-center bg-background"><Loader2 className="animate-spin text-primary" size={48} /></div>;
+    if (authLoading) return <div className="flex flex-1 min-h-0 w-full items-center justify-center bg-background"><Loader2 className="animate-spin text-primary" size={48} /></div>;
 
     if (!user) {
         return (
@@ -277,7 +277,7 @@ const App: React.FC = () => {
     }
 
     return (
-        <div className="min-h-screen bg-background text-white flex flex-col pb-16 lg:pb-0">
+        <div className="flex flex-1 min-h-0 w-full max-w-full flex-col bg-background text-white pb-bottom-nav lg:pb-0">
             <Navbar 
                 user={user} 
                 toggleSidebar={() => setSidebarOpen(!sidebarOpen)} 
@@ -301,6 +301,7 @@ const App: React.FC = () => {
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={view}
+                                className="min-w-0 max-w-full"
                                 initial={{ opacity: 0, x: 20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -20 }}

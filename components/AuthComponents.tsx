@@ -5,16 +5,18 @@ import { Button, Input, Card } from './ui';
 import { loginUser, registerUser, resetPassword, setGuestMode } from '../services/dataService';
 
 export const AuthLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-    <div className="min-h-screen bg-[#020617] text-white flex flex-col items-center justify-center p-6 relative overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-500/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/10 rounded-full blur-[120px]" />
-        <div className="w-full max-w-md relative z-10">
+    <div className="flex h-full min-h-0 w-full max-w-full flex-col items-center justify-center overflow-x-clip overflow-y-auto bg-[#020617] p-6 text-white relative">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+            <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-500/10 rounded-full blur-[120px]" />
+            <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/10 rounded-full blur-[120px]" />
+        </div>
+        <div className="w-full max-w-md min-w-0 relative z-10">
             <div className="text-center mb-10 space-y-2">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-4">
                     <Sparkles size={12} className="text-indigo-400" />
                     <span className="text-[10px] font-black uppercase tracking-widest text-indigo-100">Next-Gen Wealth OS</span>
                 </div>
-                <h1 className="text-4xl font-display font-bold tracking-widest bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent whitespace-nowrap">
+                <h1 className="text-3xl sm:text-4xl font-display font-bold tracking-widest bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent break-words">
                     INDIAN MONEY CODE
                 </h1>
                 <p className="text-gray-500 text-sm font-medium tracking-tight">Precision Intelligence. Unified Sovereignty.</p>

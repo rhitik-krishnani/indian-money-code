@@ -289,20 +289,20 @@ const BudgetPage: React.FC<{ lang: Language }> = ({ lang }) => {
     if(loading) return <div className="flex justify-center p-12"><Loader2 className="animate-spin text-primary" /></div>;
 
     return (
-        <div className="space-y-6 pb-20">
+        <div className="space-y-6 pb-20 min-w-0 max-w-full w-full">
              <div className="space-y-4">
                 <div className="flex justify-between items-center">
                     <h2 className="text-2xl font-bold">{t.moneyFlow}</h2>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                    <div className="bg-surface border border-border rounded-lg p-1 flex text-xs sm:text-sm overflow-x-auto whitespace-nowrap scrollbar-hide">
+                    <div className="bg-surface border border-border rounded-lg p-1 flex min-w-0 max-w-full w-full text-xs sm:text-sm overflow-x-auto whitespace-nowrap scrollbar-hide">
                         <button onClick={() => setTab('budget')} className={`px-4 py-1.5 rounded transition-colors ${tab === 'budget' ? 'bg-primary text-white font-bold' : 'text-gray-400'}`}>{t.expenses}</button>
                         <button onClick={() => setTab('income')} className={`px-4 py-1.5 rounded transition-colors ${tab === 'income' ? 'bg-primary text-white font-bold' : 'text-gray-400'}`}>{t.income}</button>
                         <button onClick={() => setTab('subs')} className={`px-4 py-1.5 rounded transition-colors ${tab === 'subs' ? 'bg-primary text-white font-bold' : 'text-gray-400'}`}>{t.subscriptions}</button>
                         <button onClick={() => setTab('import')} className={`px-4 py-1.5 rounded transition-colors ${tab === 'import' ? 'bg-primary text-white font-bold' : 'text-gray-400'}`}>{t.smartImport}</button>
                     </div>
                 </div>
-                <div className="flex overflow-x-auto whitespace-nowrap scrollbar-hide gap-2 pb-2">
+                <div className="flex min-w-0 max-w-full w-full overflow-x-auto whitespace-nowrap scrollbar-hide gap-2 pb-2">
                     <Button onClick={runBudgetAnalysis} variant="outline" size="sm" className="border-indigo-500/30 text-indigo-400 text-xs py-1" disabled={analyzing}>
                         {analyzing ? <Loader2 className="animate-spin" size={14} /> : <Bot size={14} />}
                         {t.analyze}

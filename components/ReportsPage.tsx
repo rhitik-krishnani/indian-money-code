@@ -367,7 +367,7 @@ export const ReportsPage: React.FC<{ lang: Language }> = ({ lang }) => {
                     </div>
                 </div>
 
-                <div className="overflow-x-auto overflow-y-hidden">
+                <div className="min-w-0 max-w-full w-full overflow-x-auto overflow-y-hidden">
                     <table className="w-full text-left">
                         <thead>
                             <tr className="border-b border-white/5">

@@ -54,7 +54,7 @@ User Agent: ${navigator.userAgent}
   public render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen bg-[#0f172a] text-white flex flex-col items-center justify-center p-4 md:p-8 font-sans antialiased selection:bg-indigo-500/30">
+        <div className="flex h-full min-h-0 w-full max-w-full flex-col items-center justify-center overflow-y-auto bg-[#0f172a] p-4 text-white md:p-8 font-sans antialiased selection:bg-indigo-500/30">
           <div className="absolute inset-0 opacity-10 pointer-events-none overflow-hidden">
             <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] rounded-full bg-red-600/30 blur-[120px]" />
             <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-orange-600/30 blur-[120px]" />

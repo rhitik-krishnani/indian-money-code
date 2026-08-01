@@ -120,10 +120,10 @@ export const LoansPage: React.FC = () => {
     if(loading) return <div className="flex justify-center p-12"><Loader2 className="animate-spin text-primary" /></div>;
 
     return (
-        <div className="space-y-6">
-            <div className="flex justify-between items-center overflow-x-auto pb-2 gap-2 scrollbar-hide">
-                <h2 className="text-2xl font-bold whitespace-nowrap mr-4">Debt Manager</h2>
-                <div className="flex gap-2">
+        <div className="space-y-6 min-w-0 max-w-full w-full">
+            <div className="flex min-w-0 max-w-full w-full flex-col gap-2 sm:flex-row sm:items-center sm:justify-between overflow-x-auto pb-2 scrollbar-hide">
+                <h2 className="text-2xl font-bold shrink-0">Debt Manager</h2>
+                <div className="flex min-w-0 gap-2">
                     <Button onClick={() => setTab('my-loans')} variant={tab === 'my-loans' ? 'default' : 'outline'} className="whitespace-nowrap">My Loans</Button>
                     <Button onClick={() => setTab('emi-calc')} variant={tab === 'emi-calc' ? 'default' : 'outline'} className="whitespace-nowrap">EMI Calc</Button>
                     <Button onClick={() => setTab('prepayment')} variant={tab === 'prepayment' ? 'default' : 'outline'} className="whitespace-nowrap">Prepayment</Button>
@@ -369,10 +369,10 @@ export const InsurancePage: React.FC = () => {
     if(loading) return <div className="flex justify-center p-12"><Loader2 className="animate-spin text-primary" /></div>;
 
     return (
-        <div className="space-y-6">
-            <div className="flex justify-between items-center overflow-x-auto pb-2 gap-2 scrollbar-hide">
-                <h2 className="text-2xl font-bold whitespace-nowrap mr-4">Insurance</h2>
-                <div className="flex gap-2">
+        <div className="space-y-6 min-w-0 max-w-full w-full">
+            <div className="flex min-w-0 max-w-full w-full flex-col gap-2 sm:flex-row sm:items-center sm:justify-between overflow-x-auto pb-2 scrollbar-hide">
+                <h2 className="text-2xl font-bold shrink-0">Insurance</h2>
+                <div className="flex min-w-0 gap-2">
                     <Button onClick={() => setTab('my-policies')} variant={tab === 'my-policies' ? 'default' : 'outline'} className="whitespace-nowrap">My Policies</Button>
                     <Button onClick={() => setTab('hlv-calc')} variant={tab === 'hlv-calc' ? 'default' : 'outline'} className="whitespace-nowrap">HLV Calc</Button>
                     <Button onClick={() => setShowModal(true)} variant="outline" className="whitespace-nowrap"><Plus size={16} /> Add Policy</Button>
@@ -1156,10 +1156,10 @@ export const CalculatorsPage: React.FC = () => {
     };
 
     return (
-        <div className="space-y-6">
-            <div className="flex justify-between items-center overflow-x-auto pb-2 gap-2 scrollbar-hide">
-                <h2 className="text-2xl font-bold whitespace-nowrap mr-4">Calculators</h2>
-                <div className="flex gap-2">
+        <div className="space-y-6 min-w-0 max-w-full w-full">
+            <div className="flex min-w-0 max-w-full w-full flex-col gap-2 overflow-x-auto pb-2 scrollbar-hide">
+                <h2 className="text-2xl font-bold shrink-0">Calculators</h2>
+                <div className="flex min-w-0 gap-2">
                     <Button onClick={() => setTab('sip')} variant={tab === 'sip' ? 'default' : 'outline'} className="whitespace-nowrap">SIP</Button>
                     <Button onClick={() => setTab('stepup')} variant={tab === 'stepup' ? 'default' : 'outline'} className="whitespace-nowrap">Step-up</Button>
                     <Button onClick={() => setTab('lumpsum')} variant={tab === 'lumpsum' ? 'default' : 'outline'} className="whitespace-nowrap">Lumpsum</Button>
@@ -1425,7 +1425,7 @@ export const CalculatorsPage: React.FC = () => {
                             
                             {tab === 'fire' && (
                                 <div className="space-y-4">
-                                    <div className="flex gap-2 p-1 bg-white/5 rounded-lg border border-white/5 overflow-x-auto scrollbar-hide">
+                                    <div className="flex min-w-0 max-w-full gap-2 p-1 bg-white/5 rounded-lg border border-white/5 overflow-x-auto scrollbar-hide">
                                         {(['lean', 'normal', 'chubby', 'fat'] as const).map(type => (
                                             <button
                                                 key={type}

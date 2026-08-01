@@ -141,7 +141,9 @@ const mountApp = () => {
     root.render(
       <React.StrictMode>
         <ErrorBoundary>
-          <App />
+          <div className="flex min-h-0 min-w-0 w-full max-w-full flex-1 flex-col">
+            <App />
+          </div>
         </ErrorBoundary>
       </React.StrictMode>
     );

@@ -17,25 +17,26 @@ export const Navbar: React.FC<{
 }> = ({ user, toggleSidebar, onLogout, setView, lang, toggleLang }) => {
     const t = translations[lang];
     return (
-    <header className="h-16 border-b border-border bg-black/90 backdrop-blur-xl sticky top-0 z-30 flex items-center justify-between px-4 lg:px-8 shadow-2xl">
-        <div className="flex items-center gap-3">
-            <button onClick={toggleSidebar} className="lg:hidden text-gray-400 hover:text-white pointer-events-auto">
+    <header className="h-16 shrink-0 border-b border-border bg-black/90 backdrop-blur-xl sticky top-0 z-30 flex items-center justify-between gap-2 px-4 lg:px-8 shadow-2xl pt-safe min-w-0 w-full max-w-full">
+        <div className="flex min-w-0 flex-1 items-center gap-2 sm:gap-3">
+            <button onClick={toggleSidebar} className="lg:hidden shrink-0 text-gray-400 hover:text-white pointer-events-auto">
                 <Menu size={24} />
             </button>
-            <div className="flex items-center gap-3 cursor-pointer shrink-0" onClick={() => setView('dashboard')}>
-                <BrandLogo size={36} className="hover:scale-110 transition-transform duration-300" />
-                <h1 className="text-lg md:text-xl font-display font-black text-white tracking-tight whitespace-nowrap overflow-hidden text-ellipsis max-w-[180px] sm:max-w-none">
+            <div className="flex min-w-0 items-center gap-2 sm:gap-3 cursor-pointer" onClick={() => setView('dashboard')}>
+                <BrandLogo size={36} className="shrink-0 hover:scale-110 transition-transform duration-300" />
+                <h1 className="min-w-0 truncate text-lg md:text-xl font-display font-black text-white tracking-tight">
                     {t.assetForge}
                 </h1>
             </div>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-3">
             <button 
                 onClick={toggleLang}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-widest text-indigo-400 hover:bg-white/10 transition-all"
+                className="flex items-center gap-1.5 px-2 sm:px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-widest text-indigo-400 hover:bg-white/10 transition-all"
             >
-                <Languages size={14} />
-                {lang === 'en' ? 'English' : 'हिंदी'}
+                <Languages size={14} className="shrink-0" />
+                <span className="sm:hidden">{lang === 'en' ? 'EN' : 'HI'}</span>
+                <span className="hidden sm:inline">{lang === 'en' ? 'English' : 'हिंदी'}</span>
             </button>
             <div 
                 className="flex items-center gap-2 cursor-pointer hover:bg-white/5 p-1.5 rounded-lg transition-colors border border-transparent hover:border-white/10"
@@ -63,23 +64,23 @@ export const BottomNav: React.FC<{ currentView: ViewState, setView: (v: ViewStat
     ];
 
     return (
-        <nav className="lg:hidden fixed bottom-px left-0 right-0 h-16 bg-surface/90 backdrop-blur-xl border-t border-border flex items-center justify-around px-2 z-50 pb-safe shadow-[0_-1px_10px_rgba(0,0,0,0.5)]">
+        <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-50 grid h-bottom-nav w-full max-w-full grid-cols-6 border-t border-border bg-surface/90 pb-safe shadow-[0_-1px_10px_rgba(0,0,0,0.5)] backdrop-blur-xl">
             {items.map(item => (
                 <button
                     key={item.id}
                     onClick={() => setView(item.id as ViewState)}
-                    className={`flex flex-col items-center justify-center gap-0.5 min-w-[60px] transition-all ${currentView === item.id ? 'text-primary' : 'text-gray-400'}`}
+                    className={`flex min-w-0 flex-col items-center justify-center gap-0.5 px-0.5 transition-all ${currentView === item.id ? 'text-primary' : 'text-gray-400'}`}
                 >
-                    <item.icon size={20} className={currentView === item.id ? 'scale-110 mb-0.5' : ''} />
-                    <span className={`text-[10px] font-bold tracking-tight ${currentView === item.id ? 'opacity-100' : 'opacity-70'}`}>{item.label}</span>
+                    <item.icon size={20} className={`shrink-0 ${currentView === item.id ? 'scale-110 mb-0.5' : ''}`} />
+                    <span className={`max-w-full truncate text-[10px] font-bold tracking-tight ${currentView === item.id ? 'opacity-100' : 'opacity-70'}`}>{item.label}</span>
                 </button>
             ))}
             <button
                 onClick={onMore}
-                className="flex flex-col items-center justify-center gap-0.5 min-w-[60px] text-gray-400"
+                className="flex min-w-0 flex-col items-center justify-center gap-0.5 px-0.5 text-gray-400"
             >
-                <Menu size={20} />
-                <span className="text-[10px] font-bold opacity-70">More</span>
+                <Menu size={20} className="shrink-0" />
+                <span className="max-w-full truncate text-[10px] font-bold opacity-70">More</span>
             </button>
         </nav>
     );
@@ -155,7 +156,7 @@ export const Sidebar: React.FC<{
                     onClick={closeMobile}
                 />
             )}
-            <aside className={`fixed lg:sticky top-16 left-0 h-[calc(100vh-4rem)] lg:h-auto bg-background/80 backdrop-blur-md border-r border-border w-64 transform transition-transform duration-300 z-40 overflow-y-auto thin-scrollbar ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
+            <aside className={`fixed lg:sticky top-16 left-0 h-[calc(100dvh-4rem)] lg:h-auto bg-background/80 backdrop-blur-md border-r border-border w-64 max-w-[min(16rem,100vw)] transform transition-transform duration-300 z-40 overflow-y-auto thin-scrollbar ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
                 <nav className="p-4 pt-6">
                     <NavGroup title="Command" items={mainNav} />
                     <NavGroup title="Intelligence" items={deepInsights} />
