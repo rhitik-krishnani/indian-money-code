@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "tsx server.ts",
-    "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
+    "build": "vite build",
+    "build:local": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
     "start": "node dist/server.cjs",
     "lint": "eslint .",
     "cap:sync": "npx cap sync android",
     "cap:copy": "npx cap copy android",
-    "android:build": "npm run build && npx cap sync android",
+    "android:build": "npm run build:local && npx cap sync android",
     "android:apk": "npm run android:build && cd android && ./gradlew assembleDebug"
   },
   "dependencies": {
@@ -47,6 +48,7 @@
     "@firebase/eslint-plugin-security-rules": "^0.0.1",
     "@types/node": "^22.14.0",
     "@types/papaparse": "^5.5.2",
+    "@vercel/node": "^5.9.7",
     "eslint": "^10.2.1",
     "typescript": "~5.8.2",
     "vite": "^8.0.10"
